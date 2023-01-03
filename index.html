@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title> haha </title>
-    </head>
-    <body>
-        haha
-    </body>
+from flask import Flask
+app = Flask(__name__)
 
-</html>
-
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
