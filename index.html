@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<title>Moody music</title>
 	<style>
 		body {
@@ -9,12 +10,15 @@
 		}
 		body {
 
-			background-image: url('musicc.jpeg');
+  			background-image: url('musicc.jpeg');
 		}
 
 		h1 {
 			text-align: center;
 			color: violet;
+		}
+		h3 {
+			color : blueviolet;
 		}
 
 		.container {
@@ -39,16 +43,18 @@
 </head>
 <body>
 	<h1>welcome to moody music</h1>
+	<center><h3>
+		I hope you are doing well and if not , dont worry , you are at right place . choose your mood from options below to play the song accordingly and hence to make you feel good.	</h3></center>center>
 	<div class="container">
 		<p>
 			Please select your mood:
 			<select id="mood">
-                <option value=" "></option>
+                <option value=" ">Select Your Mood</option>
 
 				<option value="happy">Happy</option>
 				<option value="sad">Sad</option>
 				<option value="angry">Angry</option>
-                <option value="heart broken">Angry</option>
+                <option value="heart broken">Heart Broken</option>
 			</select>
 		</p>
 		<button class="button" onclick="playMusic()">Play Music</button>
@@ -72,6 +78,7 @@
 					break;
 
 				default: 
+					alert("Please select your mood");
 					document.getElementById('audioPlayer').src = '';
 					break;
 			}
