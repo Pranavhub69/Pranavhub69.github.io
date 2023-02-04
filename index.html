@@ -1,37 +1,78 @@
+<!DOCTYPE html>
 <html>
- <head>
-  <style>
-            body {
-              background-image: url('https://theawesomedaily.com/wp-content/uploads/2017/07/meme-faces-33-1.jpg');
-              background-repeat: no-repeat;
-              background-attachment: fixed;
-              background-size: 100% 100%;
-            }
-            #name {
-                background-color:beige;
-               
-            }
-            
-   </style>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>padhle</title>
-  
- </head>
- <body><center>
-  <form id = "demo" onsubmit = "greet(); return false;">
-   <input autofocus type = "text" id = "name" placeholder = "text" autocomplete = "off">
-   <input type = "submit">
-  </form>
-  </center>
-   
-<!--   Padhai karle bhai, dusro ke insta stalk krne se ghar nhi chalta -->
-  <script>
-   function greet(){
-    alert('padhai karlo, '+ document.getElementById('name').value + ' is website pe aane se ghar nahi chalta'); 
-   }  
-   
-   </script>
- 
- </body>
+<head>
+	<title>Moody music</title>
+	<style>
+		body {
+			background-color: lightblue;
+		}
+
+		h1 {
+			text-align: center;
+			color: #000000;
+		}
+
+		.container {
+			width: 500px;
+			margin: 0 auto;
+			background-color: #F2F2F2;
+			padding: 10px;
+		}
+
+		.button {
+			background-color: #4CAF50;
+			border: none;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>welcome to moody music</h1>
+	<div class="container">
+		<p>
+			Please select your mood:
+			<select id="mood">
+                <option value=" "></option>
+
+				<option value="happy">Happy</option>
+				<option value="sad">Sad</option>
+				<option value="angry">Angry</option>
+                <option value="heart broken">Angry</option>
+			</select>
+		</p>
+		<button class="button" onclick="playMusic()">Play Music</button>
+	</div>
+	<audio id="audioPlayer" src="" controls></audio>
+	<script>
+		function playMusic(){
+			var mood = document.getElementById('mood').value;
+			switch(mood){
+				case 'happy': 
+					document.getElementById('audioPlayer').src = 'baarishein.mp3';
+					break;
+				case 'sad': 
+					document.getElementById('audioPlayer').src = 'lareechootee.mp3';
+					break;
+				case 'angry': 
+					document.getElementById('audioPlayer').src = 'eminem.mp3';
+					break;
+                case 'heart broken':
+                document.getElementById('audioPlayer').src = 'waqt.mp3';
+					break;
+
+				default: 
+					document.getElementById('audioPlayer').src = '';
+					break;
+			}
+
+			document.getElementById('audioPlayer').play();
+		}
+	</script>
+</body>
 </html>
